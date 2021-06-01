@@ -45,70 +45,51 @@ async function getBackgroundImg(){
    // console.log(responseJson);
 
     // write code slice the datetime
-    var dateTime = responseJson.currentDateTime;
+    var datetime = responseJson.datetime;
 
-   var hour = dateTime.slice(11,13);
+   var hour = datetime.slice(11,13);
 
 
     // add conditions to change the background images from sunrise to sunset
     
-   if (hour >= 06 && hour<= 19){
+   if (hour >= 04 && hour<= 06){
     bG = "sunrise1.png" ;
- }
- 
- if(hour >= 07 && hour <= 19) {
+
+ }  else if (hour >= 06 && hour <= 08){
      bG = "sunrise2.png";
+
+ } else if (hour>= 08 && hour <= 10) {
+     bG = "sunrise3.png";
+
+ } else if (hour >= 10 && hour <= 12) {
+     bG = "sunrise4.png";
+
+ } else if(hour >= 12 && hour <= 14) {
+     bG= "sunrise5.png" ;
+
+ } else if(hour >= 15 && hour <= 16) {
+     bG = "sunrise6.png" ;
+
+ } else if(hour >= 17 && hour <= 19){
+     bG = "sunset7.png";
+
+ } else if(hour>= 19 && hour <= 21) {
+     bG = "sunset8.png" ;
+
+ } else if(hour>= 21 && hour <= 23) {
+     bG = "sunset9.png" ;
+
+ } else if(hour>= 23 && hour === 0) {
+     bG = "sunset10.png";
+
+ } else if(hour === 0 && hour<= 03) {
+     bG= "sunset11.png";
+
+ } else {
+     bG = "sunset12.png";
  }
 
- if(hour >= 09 && hour <= 19) {
-    bG = "sunrise3.png";
- }
-
-   if(hour >= 11 && hour <= 19) {
-   bG = "sunrise4.png";
-   }
-   
-   if(hour >= 13 && hour <= 19) {
-    bG = "sunrise5.png";
-    }
-
-    if(hour >= 14 && hour <= 19) {
-        bG = "sunrise6.png";
-        }
-
-        if(hour >= 16 && hour <= 19) {
-            bG = "sunset7.png";
-            }
-
-            
-        if(hour >= 17 && hour <= 19) {
-            bG = "sunset8.png";
-            }
-
-            
-        if(hour >= 18 && hour <= 20) {
-            bG = "sunset9.png";
-            }
-
-            
-        if(hour >= 19 && hour <= 21) {
-            bG = "sunset10.png";
-            }
-
-            
-        if(hour >= 20 && hour <= 21) {
-            bG = "sunset11.png";
-            }
-
-            
-        if(hour >= 22 && hour <= 23) {
-            bG = "sunset12.png";
-            }
-         
-     
  
-
-
 
 
     //load the image in backgroundImg variable here
