@@ -5,6 +5,7 @@ const Constraint = Matter.Constraint;
 
 var engine, world;
 var backgroundImg;
+var datetime;
 
 var bG ;
 
@@ -23,13 +24,22 @@ function setup(){
 function draw(){
 
     // add condition to check if any background image is there to add
-
+    if (backgroundImg)
+    background(backgroundImg);
 
     Engine.update(engine);
 
     // write code to display time in correct format here
-    if (backgroundImg)
-    background(backgroundImg);
+    if(hour>=12){
+         text("Time: "+ hour%12 + " PM", 50,100); 
+
+        }else if(hour==0){ 
+            text("Time : 12 AM",100,100);
+    } else{ text("Time : "+ hour%12 + " AM", 50,100);
+
+}
+
+ 
    
 
 
